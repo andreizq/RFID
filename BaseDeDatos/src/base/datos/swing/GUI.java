@@ -396,6 +396,7 @@ public class GUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonExitActionPerformed
 
+    //METODO PARA LEER DE DB (METER AL LOOP PRINCIPAL)
     private void jButtonLeeSQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLeeSQLActionPerformed
         try
         {
@@ -437,6 +438,7 @@ public class GUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonLeeSQLActionPerformed
 
+    //AGREGAR VALIDACION SI YA EXISTE EL REGISTRO, DIRECCIONAR A CREAR O ACTUALIZAR
     private void jButtonEnviarSQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarSQLActionPerformed
         try
         {
@@ -470,6 +472,7 @@ public class GUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonLeerEPCActionPerformed
 
+    //METODO PARA LEER EPC (METER AL LOOP)
     private void jButtonLeerEPC2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLeerEPC2ActionPerformed
         // TODO add your handling code here:
         String cmd = "SELECT data FROM tag_data WHERE protocol_id='GEN2' AND antenna_id=1 AND mem_bank=1 AND block_number=2 AND block_count=6;";
@@ -480,6 +483,7 @@ public class GUI extends javax.swing.JFrame {
         jTextAreaShow.append(response + "\n");
     }
     
+    //METODO PARA POBLAR TEXTFIELD EPC
     public void fillEPC(String response){
         if(response.contains("0x")){
             jTextFieldEPC1.setText(response);
@@ -520,6 +524,8 @@ public class GUI extends javax.swing.JFrame {
                 new GUI().setVisible(true);
             }
         });
+
+        //LOOP PARA LEER EPC Y POBLAR CAMPO DE TEXTO y LEER DE BASE DE DATOS CON EL EPC OBTENIDO
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
